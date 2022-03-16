@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SmartCardReaderActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="@color/colorPrimary">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/action_bar_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="title"
+                android:textSize="30sp"></androidx.appcompat.widget.AppCompatTextView>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="15dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/open_sam_reader_btn"
+                            style="@style/contactReadersButton"
+                            android:layout_width="200dp"
+                            android:layout_height="63dp"
+                            android:enabled="true"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:onClick="onClickOpenSamReader"
+                            android:text="Open SAM reader"
+                            android:textAllCaps="false"
+                            android:textSize="15sp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/open_smartcard_btn"
+                            style="@style/contactReadersButton"
+                            android:layout_width="200dp"
+                            android:layout_height="63dp"
+                            android:enabled="true"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:onClick="onClickOpenSmartcardReader"
+                            android:text="Open Smartcard reader"
+                            android:textAllCaps="false"
+                            android:textSize="15sp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginRight="70dp"
+                        android:background="@color/colorBlack"></View>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".7"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/cold_reset_btn"
+                                style="@style/contactReadersButton"
+                                android:layout_width="200dp"
+                                android:layout_height="63dp"
+                                android:layout_marginBottom="20dp"
+                                android:enabled="false"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:onClick="onClickColdReset"
+                                android:text="Cold reset"
+                                android:textAllCaps="false"
+                                android:textSize="15sp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/get_atr_btn"
+                                style="@style/contactReadersButton"
+                                android:layout_width="200dp"
+                                android:layout_height="63dp"
+                                android:enabled="false"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:onClick="onClickGetAtr"
+                                android:text="Get ATR"
+                                android:textAllCaps="false"
+                                android:textSize="15sp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/warm_reset_btn"
+                                style="@style/contactReadersButton"
+                                android:layout_width="200dp"
+                                android:layout_height="63dp"
+                                android:layout_marginBottom="20dp"
+                                android:enabled="false"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:onClick="onClickWarmReset"
+                                android:text="Warm reset"
+                                android:textAllCaps="false"
+                                android:textSize="15sp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/transmit_apdu_btn"
+                                style="@style/contactReadersButton"
+                                android:layout_width="200dp"
+                                android:layout_height="63dp"
+                                android:enabled="false"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:onClick="onClickTransmitApdu"
+                                android:text="Transmit APDU"
+                                android:textAllCaps="false"
+                                android:textSize="15sp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".3"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/apdu_to_send_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:background="@drawable/editext_rectangle"
+                        android:cursorVisible="true"
+                        android:gravity="center"
+                        android:hint="APDU's"
+                        android:singleLine="true"
+                        android:text="00 A4 00 00 02 3F 00"
+                        android:textColor="@color/idemia_purple"
+                        android:textSize="20sp"
+                        android:theme="@style/EditTextTheme"></androidx.appcompat.widget.AppCompatEditText>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/apdu_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/editext_rectangle"
+                        android:gravity="top|left"
+                        android:lineSpacingExtra="8sp"
+                        android:paddingLeft="10dp"
+                        android:paddingBottom="0dp"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/idemia_purple"
+                        android:textSize="20sp"></androidx.appcompat.widget.AppCompatTextView>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:paddingTop="40dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/aura_mask" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginRight="70dp"
+                        android:background="@color/colorBlack"></View>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/close_reader_btn"
+                            style="@style/contactReadersButton"
+                            android:layout_width="200dp"
+                            android:layout_height="63dp"
+                            android:layout_marginTop="20dp"
+                            android:enabled="false"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:onClick="onClickCloseReader"
+                            android:text="Close reader"
+                            android:textAllCaps="false"
+                            android:textSize="15sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/footer_height"
+                    android:layout_gravity="bottom"
+                    android:background="@color/footerColor"></View>
+            </FrameLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat><!--
+</ScrollView>-->

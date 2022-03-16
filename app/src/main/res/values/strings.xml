@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">ID Screen SDK</string>
+    <string name="sdk_version">Version 1.0</string>
+
+<!--Modifying these strings will also require modifying the values in Utility.java, method getFeatures-->
+    <string name="fp_sample">Fingerprint Sensor</string>
+    <string name="usb_sample">Peripheral Management</string>
+    <string name="led_sample">Camera LED</string>
+    <string name="contact_card_sample">SAM &amp; Smartcard Readers</string>
+    <string name="iris_sample">Iris Sensor</string>
+
+    <!--    PERIPHERAL MANAGEMENT SAMPLE       -->
+    <string name="usb_mode_0">If connected to PC, fingerprint sensor and USB devices\n
+        are not available.\n\nIf not connected to PC, fingerprint sensor and USB devices\n
+        are available.</string>
+    <string name="usb_mode_1">PC connection disabled</string>
+    <string name="usb_mode_2">Fingerprint sensor and USB devices not available</string>
+
+    <!--    FINGERPRINT SENSOR SAMPLE       -->
+    <string name="capture">Capture</string>
+    <string name="stop">Stop</string>
+    <string name="verify">Verify</string>
+    <string name="textForReference">Reference Fingerprint sensor code with full features\n
+                                    and documentation is located in MorphoSmart SDK\n
+                                    (in MorphoSample folder), which is included in ID Screen SDK.
+    </string>
+    <string name="noAccessToDevice">Warning: cannot connect to fingerprint sensor.\n\nPlease open item \"Peripheral Management\" in this application main menu and check following settings :\n\t- Fingerprint sensor should be enabled\n\t- USB mode should be set to "Host". Or it should be set to "Auto" and PC shouldn\'t be connected to tablet.\n\nPlease also check that no other fingerprint sensor is connected to tablet.
+    </string>
+
+    <string name="cameraPreviewForMore">Preflash and flash brightness can be checked by taking a picture.\nPlease open Camera application below.</string>
+
+    <string name="incompatibleFirmware">Your device is not running IDEMIA secure firmware (version Sxx-y).\nSome features will not be available or will not work properly.\nPlease update your device to IDEMIA secure firmware to use all features.</string>
+</resources>

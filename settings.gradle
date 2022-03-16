@@ -1,0 +1,2 @@
+include ':app', ':MorphoSmart_SDK_6.40.0.0', ':libsmartcard'
+rootProject.name='IDScreen'
