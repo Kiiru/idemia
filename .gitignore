@@ -10,5 +10,7 @@
 .DS_Store
 /build
 /captures
+/MorphoSmart_SDK_6.40.0.0
+/libsmartcard
 .externalNativeBuild
 .cxx
